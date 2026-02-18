@@ -17,7 +17,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <220>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <150>;
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
@@ -57,7 +57,6 @@
 
 
 // LAYER 1 - Numbers on the left side
-
 
         num_layer {
             bindings = <
@@ -101,16 +100,16 @@
         nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │    Cut   │    Copy  │   Paste  │          │   │          │  Undo    │    UP    │   Redo   │ Page Up  │
-            &kp DEL    &kp LC(X)  &kp LC(C)  &kp LC(V)    &trans        &trans    &kp LC(Z)   &kp UP  &kp LC(LS(Z))  &kp PG_UP
+        //│  Undo    │    Cut   │    Copy  │   Paste  │  Redo    │   │          │  Undo    │    UP    │   Redo   │ Page Up  │
+            &kp LC(Z)    &kp LC(X)  &kp LC(C)  &kp LC(V) &kp LC(LS(Z))  &trans   &kp LC(Z)   &kp UP  &kp LC(LS(Z))  &kp PG_UP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │  LEFT    │   DOWN   │  RIGHT   │ Page Down│
-             &trans      &trans     &trans     &trans    &trans        &kp CAPS    &kp LEFT  &kp DOWN   &kp RIGHT   &kp PG_DN
+             &kp DEL    &trans     &trans     &trans    &trans        &kp CAPS    &kp LEFT  &kp DOWN   &kp RIGHT   &kp PG_DN
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  Insert  │   Home   │  End     │          │          │
-            &trans     &trans     &trans    &trans       &trans         &kp INS   &kp HOME    &kp END     &trans     &trans
+            &kp DEL    &trans     &trans    &trans       &trans         &kp INS   &kp HOME    &kp END     &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans          &trans     &trans
+                                             &kp DEL     &trans          &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -160,11 +159,11 @@
         conf_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
-           &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
+        //│ DVORAK   │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
+           &to 0        &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-          &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
+        //QUERTY     |          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
+            &to 7      &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
             &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
@@ -174,24 +173,24 @@
             >;
         };
 
-// LAYER X
+// LAYER 7
 
-//        qwerty_layer {
-//            bindings = <
+        qwerty_layer {
+            bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-//            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-//            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SQT)
+            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SQT)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-//            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-//                                            &lt 2 TAB   &kp ENTER     &kp SPACE  &lt 1 BSPC
+                                            &lt 2 TAB   &kp ENTER     &kp SPACE  &lt 1 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-//            >;
-//        };
+            >;
+        };
 
 
 
