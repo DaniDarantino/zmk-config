@@ -31,7 +31,7 @@
             then-layer = <5>;
         };
         conf_layer {
-            if-layers = <4 2>;
+            if-layers = <2 4>;
             then-layer = <6>;
         };
     };
@@ -187,7 +187,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 TAB   &kp ENTER     &kp SPACE  &lt 1 BSPC
+                                            &lt 4 TAB  &lt 3 BSPC     &lt 1 SPACE &lt 2 ENTER
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
