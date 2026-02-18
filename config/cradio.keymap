@@ -27,12 +27,12 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         fun_layer {
-            if-layers = <1 2>;
-            then-layer = <5>;
+            if-layers = <2 3>;
+            then-layer = <6>;
         };
         conf_layer {
-            if-layers = <2 4>;
-            then-layer = <6>;
+            if-layers = <3 5>;
+            then-layer = <7>;
         };
     };
 
@@ -50,13 +50,32 @@
         //│  ; :     │  Q       │  J       │  K       │  X       │   │  B       │  M       │ W        │ V        │  Z       │
             &kp SEMI      &kp Q      &kp J      &kp K      &kp X          &kp B      &kp M    &kp W       &kp V    &kp Z
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 4 TAB  &lt 3 BSPC     &lt 1 SPACE &lt 2 ENTER
+                                            &lt 5 TAB  &lt 4 BSPC     &lt 2 SPACE &lt 3 ENTER
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+// LAYER 1
+
+        qwerty_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
+            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
+            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SQT)
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                            &lt 5 TAB  &lt 4 BSPC     &lt 2 SPACE &lt 3 ENTER
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
 
 
-// LAYER 1 - Numbers on the left side
+// LAYER 2 - Numbers on the left side
 
         num_layer {
             bindings = <
@@ -75,7 +94,7 @@
             >;
         };
 
-// LAYER 2 - Symbols on the left side
+// LAYER 3 - Symbols on the left side
 
         sym_layer {
             bindings = <
@@ -94,7 +113,7 @@
             >;
         };
 
-// LAYER 3 - NAV navigation on the right
+// LAYER 4 - NAV navigation on the right
 
 
         nav_layer {
@@ -115,7 +134,7 @@
         };
 
 
-// LAYER 4 - mouse
+// LAYER 5 - mouse
 
 
         mouse_layer {
@@ -135,7 +154,7 @@
             >;
         };
 
-// LAYER 5 - function layer
+// LAYER 6 - function layer
 
         fun_layer {
             bindings = <
@@ -154,7 +173,7 @@
             >;
         };
 
-// LAYER 6 - config layer
+// LAYER 7 - config layer
 
         conf_layer {
             bindings = <
@@ -163,7 +182,7 @@
            &to 0        &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //QUERTY     |          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-            &to 7      &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
+            &to 1      &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
             &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
@@ -173,24 +192,6 @@
             >;
         };
 
-// LAYER 7
-
-        qwerty_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SQT)
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 4 TAB  &lt 3 BSPC     &lt 1 SPACE &lt 2 ENTER
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
 
 
 
