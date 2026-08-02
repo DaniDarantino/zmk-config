@@ -26,7 +26,7 @@
                        <&macro_tap &kp N2>,
                        <&macro_tap &kp N8>,
                        <&macro_release &kp LALT>;
-        },
+        };
 
         umlaut_oe_lower: umlaut_oe_lower {
             compatible = "zmk,behavior-macro";
@@ -39,7 +39,7 @@
                        <&macro_tap &kp N4>,
                        <&macro_tap &kp N6>,
                        <&macro_release &kp LALT>;
-        },
+        };
 
         umlaut_ue_lower: umlaut_ue_lower {
             compatible = "zmk,behavior-macro";
@@ -52,7 +52,7 @@
                        <&macro_tap &kp N5>,
                        <&macro_tap &kp N2>,
                        <&macro_release &kp LALT>;
-        },
+        };
 
         umlaut_ss_lower: umlaut_ss_lower {
             compatible = "zmk,behavior-macro";
@@ -65,7 +65,7 @@
                        <&macro_tap &kp N2>,
                        <&macro_tap &kp N3>,
                        <&macro_release &kp LALT>;
-        },
+        };
 
         // Uppercase umlauts
         umlaut_ae_upper: umlaut_AE_upper {
@@ -79,7 +79,7 @@
                        <&macro_tap &kp N9>,
                        <&macro_tap &kp N6>,
                        <&macro_release &kp LALT>;
-        },
+        };
 
         umlaut_oe_upper: umlaut_OE_upper {
             compatible = "zmk,behavior-macro";
@@ -92,7 +92,7 @@
                        <&macro_tap &kp N1>,
                        <&macro_tap &kp N4>,
                        <&macro_release &kp LALT>;
-        },
+        };
 
         umlaut_ue_upper: umlaut_UE_upper {
             compatible = "zmk,behavior-macro";
@@ -105,7 +105,7 @@
                        <&macro_tap &kp N2>,
                        <&macro_tap &kp N0>,
                        <&macro_release &kp LALT>;
-        },
+        };
 
         umlaut_ss_upper: umlaut_SS_upper {
             compatible = "zmk,behavior-macro";
