@@ -10,6 +10,63 @@
 #define HRML(k1,k2,k3,k4) &ht LGUI k1  &ht LALT k2  &ht LCTRL k3  &ht LSHFT k4
 #define HRMR(k1,k2,k3,k4) &ht RSHFT k1  &ht RCTRL k2  &ht RALT k3  &ht RGUI k4
 
+
+
+/ {
+    behaviors {
+        // ö when Alt (from home row) + o is pressed
+        umlaut_oe: macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N246>;
+        };
+
+        // Ö when Alt+Shift + o is pressed
+        umlaut_OE: macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N214>;
+        };
+
+        // ü when Alt + u is pressed
+        umlaut_ue: macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N252>;
+        };
+
+        // Ü when Alt+Shift + u is pressed
+        umlaut_UE: macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N220>;
+        };
+
+        // ä when Alt + a is pressed
+        umlaut_ae: macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N228>;
+        };
+
+        // Ä when Alt+Shift + a is pressed
+        umlaut_AE: macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N196>;
+        };
+
+        // ß when Alt + s is pressed
+        umlaut_sz: macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N223>;
+        };
+    };
+};
+
+
+// Mods for writing umlauts using alt codes (only on windows). 
 / {
 
     behaviors {
@@ -45,7 +102,7 @@
             &kp SQT   &kp COMMA  &kp DOT     &kp P      &kp Y          &kp F      &kp G      &kp C      &kp R      &kp L
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  O       │  E       │  U       │  I       │   │  D       │  H       │  T       │  N       │  S       │
-            HRML(A,        O,         E,         U)     &kp I          &kp D      HRMR(H,        T,         N,           S)
+            HRML(&umlaut_ae,        &umlaut_oe,         E,         &umlaut_ue)     &kp I          &kp D      HRMR(H,        T,         N,           &umlaut_sz)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ; :     │  Q       │  J       │  K       │  X       │   │  B       │  M       │ W        │ V        │  Z       │
             &kp SEMI      &kp Q      &kp J      &kp K      &kp X          &kp B      &kp M    &kp W       &kp V    &kp Z
@@ -99,14 +156,14 @@
         sym_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  ~       │  &       │  *       │  ()      │  (       │   │  )       │  )       │  (       │          │  =       │
-           &kp TILDE    &kp AMPS   &kp ASTRK   &kp LPAR   &kp LPAR     &kp RPAR   &kp RPAR   &kp LPAR   &trans   &kp EQUAL
+        //│  ~       │  &       │  *       │  ()      │  (       │   │  )       │  (       │  )       │          │  =       │
+           &kp TILDE    &kp AMPS   &kp ASTRK   &kp LPAR   &kp LPAR     &kp RPAR   &kp LPAR   &kp RPAR   &trans   &kp EQUAL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  |       │  $       │  %       │  ^       │  {       │   │  }       │  }       │  {       │          │          │
-            &kp PIPE   &kp DLLR  &kp PRCNT   &kp CARET   &kp LBRC      &kp RBRC    &kp RBRC  &kp LBRC   &trans      &trans
+        //│  |       │  $       │  %       │  ^       │  {       │   │  }       │  {       │  }       │          │          │
+            &kp PIPE   &kp DLLR  &kp PRCNT   &kp CARET   &kp LBRC      &kp RBRC    &kp LBRC  &kp RBRC   &trans      &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  ?       │  !       │  @       │   #      │    [     │   │  ]       │  ]       │  [       │          │          │
-            &kp QMARK  &kp EXCL    &kp AT    &kp HASH    &kp LBKT       &kp RBKT   &kp RBKT   &kp LBKT   &trans     &trans
+        //│  ?       │  !       │  @       │   #      │    [     │   │  ]       │  [       │  ]       │          │          │
+            &kp QMARK  &kp EXCL    &kp AT    &kp HASH    &kp LBKT       &kp RBKT   &kp LBKT   &kp RBKT   &trans     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
