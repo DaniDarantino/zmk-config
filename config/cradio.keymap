@@ -15,69 +15,104 @@
 / {
     behaviors {
         // Lowercase umlauts
-        umlaut_a_lower: umlaut_a_lower {
+        umlaut_ae_lower: umlaut_ae_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <5>;
             tap-ms = <5>;
-            bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N2> <&macro_tap &kp N8> <&macro_release &kp LALT>;
+            bindings = <&macro_press &kp LALT>,
+                       <&macro_tap &kp N0>,
+                       <&macro_tap &kp N2>,
+                       <&macro_tap &kp N2>,
+                       <&macro_tap &kp N8>,
+                       <&macro_release &kp LALT>;
         },
 
-        umlaut_o_lower: umlaut_o_lower {
+        umlaut_oe_lower: umlaut_oe_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <5>;
             tap-ms = <5>;
-            bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N4> <&macro_tap &kp N6> <&macro_release &kp LALT>;
+            bindings = <&macro_press &kp LALT>,
+                       <&macro_tap &kp N0>,
+                       <&macro_tap &kp N2>,
+                       <&macro_tap &kp N4>,
+                       <&macro_tap &kp N6>,
+                       <&macro_release &kp LALT>;
         },
 
-        umlaut_u_lower: umlaut_u_lower {
+        umlaut_ue_lower: umlaut_ue_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <5>;
             tap-ms = <5>;
-            bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N5> <&macro_tap &kp N2> <&macro_release &kp LALT>;
+            bindings = <&macro_press &kp LALT>,
+                       <&macro_tap &kp N0>,
+                       <&macro_tap &kp N2>,
+                       <&macro_tap &kp N5>,
+                       <&macro_tap &kp N2>,
+                       <&macro_release &kp LALT>;
         },
 
-        umlaut_sz_lower: umlaut_sz_lower {
+        umlaut_ss_lower: umlaut_ss_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <5>;
             tap-ms = <5>;
-            bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N2> <&macro_tap &kp N3> <&macro_release &kp LALT>;
+            bindings = <&macro_press &kp LALT>,
+                       <&macro_tap &kp N0>,
+                       <&macro_tap &kp N2>,
+                       <&macro_tap &kp N2>,
+                       <&macro_tap &kp N3>,
+                       <&macro_release &kp LALT>;
         },
 
         // Uppercase umlauts
-        umlaut_a_upper: umlaut_a_upper {
+        umlaut_ae_upper: umlaut_AE_upper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <5>;
             tap-ms = <5>;
-            bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N1> <&macro_tap &kp N9> <&macro_tap &kp N6> <&macro_release &kp LALT>;
+            bindings = <&macro_press &kp LALT>,
+                       <&macro_tap &kp N0>,
+                       <&macro_tap &kp N1>,
+                       <&macro_tap &kp N9>,
+                       <&macro_tap &kp N6>,
+                       <&macro_release &kp LALT>;
         },
 
-        umlaut_o_upper: umlaut_o_upper {
+        umlaut_oe_upper: umlaut_OE_upper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <5>;
             tap-ms = <5>;
-            bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N1> <&macro_tap &kp N4> <&macro_release &kp LALT>;
+            bindings = <&macro_press &kp LALT>,
+                       <&macro_tap &kp N0>,
+                       <&macro_tap &kp N2>,
+                       <&macro_tap &kp N1>,
+                       <&macro_tap &kp N4>,
+                       <&macro_release &kp LALT>;
         },
 
-        umlaut_u_upper: umlaut_u_upper {
+        umlaut_ue_upper: umlaut_UE_upper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <5>;
             tap-ms = <5>;
-            bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N2> <&macro_tap &kp N0> <&macro_release &kp LALT>;
+            bindings = <&macro_press &kp LALT>,
+                       <&macro_tap &kp N0>,
+                       <&macro_tap &kp N2>,
+                       <&macro_tap &kp N2>,
+                       <&macro_tap &kp N0>,
+                       <&macro_release &kp LALT>;
         },
 
-        umlaut_sz_upper: umlaut_sz_upper {
+        umlaut_ss_upper: umlaut_SS_upper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <5>;
             tap-ms = <5>;
-            bindings = <&kp LSFT> <&kp S> <&kp S> <&kp S>;
+            bindings = <&kp LSFT>, <&kp S>, <&kp S>;
         };
     };
 };
@@ -218,10 +253,10 @@
             &trans       &trans     &trans     &trans    &trans    &trans  &msc SCRL_DOWN   &mmv MOVE_UP     &msc SCRL_UP      &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │   LEFT   │  DOWN    │  RIGHT   │          │
-             &umlaut_a_lower      &umlaut_o_lower     &umlaut_sz_lower     &umlaut_u_lower    &trans      &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT  &umlaut_sz_lower
+             &umlaut_ae_lower      &umlaut_oe_lower     &umlaut_ss_lower     &umlaut_ue_lower    &trans      &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT  &umlaut_ss_lower
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &umlaut_a_upper     &umlaut_o_upper     &umlaut_sz_upper    &umlaut_u_upper       &trans         &trans     &trans     &trans     &trans     &umlaut_sz_upper
+            &umlaut_ae_upper     &umlaut_oe_upper     &umlaut_ss_upper    &umlaut_ue_upper       &trans         &trans     &trans     &trans     &trans     &umlaut_ss_upper
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &mkp MB3      &mkp MB1   &mkp MB2
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
