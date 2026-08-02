@@ -21,7 +21,7 @@
             wait-ms = <5>;
             tap-ms = <5>;
             bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N2> <&macro_tap &kp N8> <&macro_release &kp LALT>;
-        };
+        },
 
         umlaut_o_lower: umlaut_o_lower {
             compatible = "zmk,behavior-macro";
@@ -29,7 +29,7 @@
             wait-ms = <5>;
             tap-ms = <5>;
             bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N4> <&macro_tap &kp N6> <&macro_release &kp LALT>;
-        };
+        },
 
         umlaut_u_lower: umlaut_u_lower {
             compatible = "zmk,behavior-macro";
@@ -37,7 +37,7 @@
             wait-ms = <5>;
             tap-ms = <5>;
             bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N5> <&macro_tap &kp N2> <&macro_release &kp LALT>;
-        };
+        },
 
         umlaut_sz_lower: umlaut_sz_lower {
             compatible = "zmk,behavior-macro";
@@ -45,7 +45,7 @@
             wait-ms = <5>;
             tap-ms = <5>;
             bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N2> <&macro_tap &kp N3> <&macro_release &kp LALT>;
-        };
+        },
 
         // Uppercase umlauts
         umlaut_a_upper: umlaut_a_upper {
@@ -54,7 +54,7 @@
             wait-ms = <5>;
             tap-ms = <5>;
             bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N1> <&macro_tap &kp N9> <&macro_tap &kp N6> <&macro_release &kp LALT>;
-        };
+        },
 
         umlaut_o_upper: umlaut_o_upper {
             compatible = "zmk,behavior-macro";
@@ -62,7 +62,7 @@
             wait-ms = <5>;
             tap-ms = <5>;
             bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N1> <&macro_tap &kp N4> <&macro_release &kp LALT>;
-        };
+        },
 
         umlaut_u_upper: umlaut_u_upper {
             compatible = "zmk,behavior-macro";
@@ -70,7 +70,7 @@
             wait-ms = <5>;
             tap-ms = <5>;
             bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N2> <&macro_tap &kp N0> <&macro_release &kp LALT>;
-        };
+        },
 
         umlaut_sz_upper: umlaut_sz_upper {
             compatible = "zmk,behavior-macro";
