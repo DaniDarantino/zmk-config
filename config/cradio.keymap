@@ -11,22 +11,6 @@
 #define HRMR(k1,k2,k3,k4) &ht RSHFT k1  &ht RCTRL k2  &ht RALT k3  &ht RGUI k4
 
 
-umlaut_a: umlaut_a_lower {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings =
-        <&macro_press &kp LEFT_ALT>,
-        <&macro_wait_time 20>,
-        <&macro_tap &kp KP_N0>,
-        <&macro_wait_time 10>,
-        <&macro_tap &kp KP_N2>,
-        <&macro_wait_time 10>,
-        <&macro_tap &kp KP_N2>,
-        <&macro_wait_time 10>,
-        <&macro_tap &kp KP_N8>,
-        <&macro_wait_time 20>,
-        <&macro_release &kp LEFT_ALT>;
-};
 
 / {
     behaviors {
@@ -34,13 +18,16 @@ umlaut_a: umlaut_a_lower {
         umlaut_ae_lower: umlaut_ae_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
             bindings = <&macro_press &kp LALT>,
+                    <&macro_wait_time 50>,
                        <&macro_tap &kp N0>,
+                               <&macro_wait_time 50>,
                        <&macro_tap &kp N2>,
+                               <&macro_wait_time 50>,
                        <&macro_tap &kp N2>,
+                               <&macro_wait_time 50>,
                        <&macro_tap &kp N8>,
+                               <&macro_wait_time 50>,
                        <&macro_release &kp LALT>;
         };
 
@@ -269,7 +256,7 @@ umlaut_a: umlaut_a_lower {
             &trans       &trans     &trans     &trans    &trans    &trans  &msc SCRL_DOWN   &mmv MOVE_UP     &msc SCRL_UP      &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │   LEFT   │  DOWN    │  RIGHT   │          │
-             &umlaut_a      &umlaut_oe_lower     &umlaut_ss_lower     &umlaut_ue_lower    &trans      &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT  &umlaut_ss_lower
+             &umlaut_ae_lower      &umlaut_oe_lower     &umlaut_ss_lower     &umlaut_ue_lower    &trans      &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT  &umlaut_ss_lower
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &umlaut_ae_upper     &umlaut_oe_upper     &umlaut_ss_upper    &umlaut_ue_upper       &trans         &trans     &trans     &trans     &trans     &umlaut_ss_upper
