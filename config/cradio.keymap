@@ -18,38 +18,34 @@
         umlaut_ae_lower: umlaut_ae_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <50>;
-            tap-ms = <50>;
+            wait-ms = <30>;
+            tap-ms = <30>;
             bindings = <&macro_press &kp LALT>,
-                       <&macro_wait 50>,
                        <&macro_tap &kp N0>,
                        <&macro_tap &kp N2>,
                        <&macro_tap &kp N2>,
                        <&macro_tap &kp N8>,
-                       <&macro_wait 50>,
                        <&macro_release &kp LALT>;
         };
 
         umlaut_oe_lower: umlaut_oe_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <0>;
-            tap-ms = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             bindings = <&macro_press &kp LALT>,
-                       <&macro_wait 50>,
                        <&macro_tap &kp N0>,
                        <&macro_tap &kp N2>,
                        <&macro_tap &kp N4>,
                        <&macro_tap &kp N6>,
-                       <&macro_wait 100>,
                        <&macro_release &kp LALT>;
         };
 
         umlaut_ue_lower: umlaut_ue_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <50>;
+            tap-ms = <50>;
             bindings = <&macro_press &kp LALT>,
                        <&macro_tap &kp N0>,
                        <&macro_tap &kp N2>,
@@ -61,8 +57,8 @@
         umlaut_ss_lower: umlaut_ss_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
+            wait-ms = <100>;
+            tap-ms = <50>;
             bindings = <&macro_press &kp LALT>,
                        <&macro_tap &kp N0>,
                        <&macro_tap &kp N2>,
@@ -75,8 +71,8 @@
         umlaut_ae_upper: umlaut_AE_upper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <100>;
-            tap-ms = <50>;
+            wait-ms = <10>;
+            tap-ms = <10>;
             bindings = <&macro_press &kp LALT>,
                        <&macro_tap &kp N0>,
                        <&macro_tap &kp N1>,
