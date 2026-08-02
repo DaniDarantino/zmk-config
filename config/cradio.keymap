@@ -12,6 +12,14 @@
 
 
 
+umlaut_oe: umlaut_oe_lower {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <10>;
+    bindings = <&kp LALT> <&kp NU00F6> <&kp LALT>;
+};
+
+
 / {
     behaviors {
         // Lowercase umlauts
@@ -253,7 +261,7 @@
             &trans       &trans     &trans     &trans    &trans    &trans  &msc SCRL_DOWN   &mmv MOVE_UP     &msc SCRL_UP      &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │   LEFT   │  DOWN    │  RIGHT   │          │
-             &umlaut_ae_lower      &umlaut_oe_lower     &umlaut_ss_lower     &umlaut_ue_lower    &trans      &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT  &umlaut_ss_lower
+             &umlaut_ae_lower      &umlaut_oe     &umlaut_ss_lower     &umlaut_ue_lower    &trans      &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT  &umlaut_ss_lower
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &umlaut_ae_upper     &umlaut_oe_upper     &umlaut_ss_upper    &umlaut_ue_upper       &trans         &trans     &trans     &trans     &trans     &umlaut_ss_upper
