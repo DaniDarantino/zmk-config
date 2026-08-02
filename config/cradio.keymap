@@ -41,7 +41,7 @@
                        <&macro_tap &kp N2>,
                        <&macro_tap &kp N4>,
                        <&macro_tap &kp N6>,
-                       <&macro_wait 100>
+                       <&macro_wait 100>,
                        <&macro_release &kp LALT>;
         };
 
@@ -75,8 +75,8 @@
         umlaut_ae_upper: umlaut_AE_upper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
+            wait-ms = <100>;
+            tap-ms = <50>;
             bindings = <&macro_press &kp LALT>,
                        <&macro_tap &kp N0>,
                        <&macro_tap &kp N1>,
