@@ -18,8 +18,8 @@
         umlaut_ae_lower: umlaut_ae_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <5>;
+            wait-ms = <10>;
+            tap-ms = <10>;
             bindings = <&macro_press &kp LALT>,
                        <&macro_tap &kp N0>,
                        <&macro_tap &kp N2>,
@@ -31,8 +31,8 @@
         umlaut_oe_lower: umlaut_oe_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <5>;
+            wait-ms = <10>;
+            tap-ms = <10>;
             bindings = <&macro_press &kp LALT>,
                        <&macro_tap &kp N0>,
                        <&macro_tap &kp N2>,
@@ -44,8 +44,8 @@
         umlaut_ue_lower: umlaut_ue_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <5>;
+            wait-ms = <10>;
+            tap-ms = <10>;
             bindings = <&macro_press &kp LALT>,
                        <&macro_tap &kp N0>,
                        <&macro_tap &kp N2>,
@@ -57,8 +57,8 @@
         umlaut_ss_lower: umlaut_ss_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <5>;
+            wait-ms = <10>;
+            tap-ms = <10>;
             bindings = <&macro_press &kp LALT>,
                        <&macro_tap &kp N0>,
                        <&macro_tap &kp N2>,
@@ -71,8 +71,8 @@
         umlaut_ae_upper: umlaut_AE_upper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <5>;
+            wait-ms = <10>;
+            tap-ms = <10>;
             bindings = <&macro_press &kp LALT>,
                        <&macro_tap &kp N0>,
                        <&macro_tap &kp N1>,
@@ -84,8 +84,8 @@
         umlaut_oe_upper: umlaut_OE_upper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <5>;
+            wait-ms = <10>;
+            tap-ms = <10>;
             bindings = <&macro_press &kp LALT>,
                        <&macro_tap &kp N0>,
                        <&macro_tap &kp N2>,
@@ -97,8 +97,8 @@
         umlaut_ue_upper: umlaut_UE_upper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <5>;
+            wait-ms = <10>;
+            tap-ms = <10>;
             bindings = <&macro_press &kp LALT>,
                        <&macro_tap &kp N0>,
                        <&macro_tap &kp N2>,
@@ -110,8 +110,8 @@
         umlaut_ss_upper: umlaut_SS_upper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <5>;
-            tap-ms = <5>;
+            wait-ms = <10>;
+            tap-ms = <10>;
             bindings = <&kp LSFT>, <&kp S>, <&kp S>;
         };
     };
@@ -235,7 +235,7 @@
              &kp DEL    &trans     &trans     &trans    &trans        &kp CAPS    &kp LEFT  &kp DOWN   &kp RIGHT   &kp PG_DN
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  Insert  │   Home   │  End     │          │          │
-            &kp DEL    &trans     &trans    &trans       &trans         &kp INS   &kp HOME    &kp END     &trans     &trans
+            &kp DEL    &trans     &trans    &trans       &trans         &kp INS   &kp HOME    &kp END     &kp NUM     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &kp DEL     &trans          &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
