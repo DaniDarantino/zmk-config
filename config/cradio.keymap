@@ -14,41 +14,70 @@
 
 / {
     behaviors {
-        // ä when pressed normally, Ä when Shift is held
-        umlaut_ae: macro {
+        // Lowercase umlauts
+        umlaut_a_lower: umlaut_a_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&cond
-                &kp N196  // Ä (if shift is held)
-                &kp N228  // ä (if shift is not held)
-            >;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N2> <&macro_tap &kp N8> <&macro_release &kp LALT>;
         };
 
-        // ö when pressed normally, Ö when Shift is held
-        umlaut_oe: macro {
+        umlaut_o_lower: umlaut_o_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&cond
-                &kp N214  // Ö
-                &kp N246  // ö
-            >;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N4> <&macro_tap &kp N6> <&macro_release &kp LALT>;
         };
 
-        // ü when pressed normally, Ü when Shift is held
-        umlaut_ue: macro {
+        umlaut_u_lower: umlaut_u_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&cond
-                &kp N220  // Ü
-                &kp N252  // ü
-            >;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N5> <&macro_tap &kp N2> <&macro_release &kp LALT>;
         };
 
-        // ß when pressed normally (no uppercase version needed)
-        umlaut_sz: macro {
+        umlaut_sz_lower: umlaut_sz_lower {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp N223>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N2> <&macro_tap &kp N3> <&macro_release &kp LALT>;
+        };
+
+        // Uppercase umlauts
+        umlaut_a_upper: umlaut_a_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N1> <&macro_tap &kp N9> <&macro_tap &kp N6> <&macro_release &kp LALT>;
+        };
+
+        umlaut_o_upper: umlaut_o_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N1> <&macro_tap &kp N4> <&macro_release &kp LALT>;
+        };
+
+        umlaut_u_upper: umlaut_u_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&macro_press &kp LALT> <&macro_tap &kp N0> <&macro_tap &kp N2> <&macro_tap &kp N2> <&macro_tap &kp N0> <&macro_release &kp LALT>;
+        };
+
+        umlaut_sz_upper: umlaut_sz_upper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&kp LSFT> <&kp S> <&kp S> <&kp S>;
         };
     };
 };
@@ -189,10 +218,10 @@
             &trans       &trans     &trans     &trans    &trans    &trans  &msc SCRL_DOWN   &mmv MOVE_UP     &msc SCRL_UP      &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │   LEFT   │  DOWN    │  RIGHT   │          │
-             &umlaut_ae      &umlaut_oe     &umlaut_sz     &umlaut_ue    &trans      &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT  &umlaut_sz
+             &umlaut_a_lower      &umlaut_o_lower     &umlaut_sz_lower     &umlaut_u_lower    &trans      &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT  &umlaut_sz_lower
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     &trans     &trans    &trans       &trans         &trans     &trans     &trans     &trans     &trans
+            &umlaut_a_upper     &umlaut_o_upper     &umlaut_sz_upper    &umlaut_u_upper       &trans         &trans     &trans     &trans     &trans     &umlaut_sz_upper
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &mkp MB3      &mkp MB1   &mkp MB2
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
