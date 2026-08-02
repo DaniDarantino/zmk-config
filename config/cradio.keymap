@@ -14,49 +14,37 @@
 
 / {
     behaviors {
-        // ö when Alt (from home row) + o is pressed
-        umlaut_oe: macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp N246>;
-        };
-
-        // Ö when Alt+Shift + o is pressed
-        umlaut_OE: macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp N214>;
-        };
-
-        // ü when Alt + u is pressed
-        umlaut_ue: macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp N252>;
-        };
-
-        // Ü when Alt+Shift + u is pressed
-        umlaut_UE: macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp N220>;
-        };
-
-        // ä when Alt + a is pressed
+        // ä when pressed normally, Ä when Shift is held
         umlaut_ae: macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp N228>;
+            bindings = <&cond
+                &kp N196  // Ä (if shift is held)
+                &kp N228  // ä (if shift is not held)
+            >;
         };
 
-        // Ä when Alt+Shift + a is pressed
-        umlaut_AE: macro {
+        // ö when pressed normally, Ö when Shift is held
+        umlaut_oe: macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp N196>;
+            bindings = <&cond
+                &kp N214  // Ö
+                &kp N246  // ö
+            >;
         };
 
-        // ß when Alt + s is pressed
+        // ü when pressed normally, Ü when Shift is held
+        umlaut_ue: macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&cond
+                &kp N220  // Ü
+                &kp N252  // ü
+            >;
+        };
+
+        // ß when pressed normally (no uppercase version needed)
         umlaut_sz: macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -102,7 +90,7 @@
             &kp SQT   &kp COMMA  &kp DOT     &kp P      &kp Y          &kp F      &kp G      &kp C      &kp R      &kp L
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  O       │  E       │  U       │  I       │   │  D       │  H       │  T       │  N       │  S       │
-            HRML(&umlaut_ae,        &umlaut_oe,         E,         &umlaut_ue)     &kp I          &kp D      HRMR(H,        T,         N,           &umlaut_sz)
+            HRML(A,        O,         E,         U)     &kp I          &kp D      HRMR(H,        T,         N,           S)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  ; :     │  Q       │  J       │  K       │  X       │   │  B       │  M       │ W        │ V        │  Z       │
             &kp SEMI      &kp Q      &kp J      &kp K      &kp X          &kp B      &kp M    &kp W       &kp V    &kp Z
@@ -201,7 +189,7 @@
             &trans       &trans     &trans     &trans    &trans    &trans  &msc SCRL_DOWN   &mmv MOVE_UP     &msc SCRL_UP      &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │   LEFT   │  DOWN    │  RIGHT   │          │
-             &trans      &trans     &trans     &trans    &trans      &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT  &trans
+             &umlaut_ae      &umlaut_oe     &umlaut_sz     &umlaut_ue    &trans      &trans &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT  &umlaut_sz
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &trans     &trans     &trans    &trans       &trans         &trans     &trans     &trans     &trans     &trans
